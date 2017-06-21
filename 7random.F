@@ -49,12 +49,7 @@ c     Teilchenzahl
 
          enddo
 
-
-
          R(M+N+1) = R(M+N+1) +1
-
-
-
 
       enddo
 
@@ -62,11 +57,13 @@ c     Teilchenzahl
          R(i) = R(i)/L
       enddo
 
-      write(100,*)'N=', N, 'PR=', PR, 'L=', L
+      write(100,*)'#','N=', N, 'PR=', PR, 'L=', L
       
       do i = 1, 2*N+1
          write(100,*) x(i), R(i)
       enddo
+
+      write(100,*) 
 
       Mq = 0
       do i = 1, 2*N+1  
@@ -80,8 +77,8 @@ c     Teilchenzahl
 
       
 
-      write(100,*) 'Mittelwert = ', Mq
-      write(100,*) 'Varianz = ', vM
+      write(100,*) '#Mittelwert = ', Mq
+      write(100,*) '#Varianz = ', vM
       write(101,*) N, vM
       
       deallocate(R)
